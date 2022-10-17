@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Vazirmatn, sans-serif;
+}
+
+hr {
+  border: 0.5px solid;
+  opacity: 0.1;
+}
+
+.ltr {
+  direction: ltr;
+}
