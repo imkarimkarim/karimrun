@@ -2,7 +2,7 @@ import en from "./langs/en.json";
 import fa from "./langs/fa.json";
 
 let languages = {};
-export let currentLang = "fa";
+export let currentLang = "en";
 
 const addLanguage = (lang, obj) => {
   languages[lang] = obj;
@@ -25,7 +25,7 @@ let localLang = localStorage.getItem("lang");
 if (localLang) {
   currentLang = localLang;
 } else {
-  localStorage.setItem("lang", "fa");
+  localStorage.setItem("lang", "en");
 }
 
 export const switchLang = () => {
