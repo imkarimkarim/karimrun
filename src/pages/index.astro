@@ -1,81 +1,185 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { Image } from "@astrojs/image/components";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="karim, aka Alireza Madani">
+  <main class="flex flex-col items-center justify-center">
+    <header class="w-full sm:w-2/3 lg:w-1/2 text-center">
+      <h1
+        class="text-xl md:text-3xl mx-4 mt-10 md:mx-2 md:mt-10 font-bold gradient-border p-6 md:p-10 font-sans"
+      >
+        hi<Image
+          class="w-6 h-6 sm:w-8 sm:h-8 inline wave mr-1"
+          width={250}
+          height={250}
+          format={"png"}
+          src="/emojis/waving-hand.png"
+          alt="waving hand emoji"
+        /> im karim<span class="font-light inline-block text-sm text-gray-400"
+          >(aka Alireza Madani)</span
+        >
+        <br />
+        <div class="my-2"></div>a Front-end developer<Image
+          class="w-6 h-6 sm:w-8 sm:h-8 inline"
+          width={250}
+          height={250}
+          format={"png"}
+          src="/emojis/technologist.png"
+          alt="technologist emoji"
+        />
+        <br />
+        <span class="font-extralight text-xs text-gray-400 font-mono" id="coded"
+          >...</span
+        >
+      </h1>
+    </header>
+    <br />
+    <br />
+  </main>
+  <div class="flex flex-col items-center">
+    <section class="mx-4 sm:mx-0 sm:w-2/3 lg:w-2/4 text-left">
+      <h2 class="text-xl font-bold border-b-2 border-gray-600 mb-3" id="about">
+        About Me
+      </h2>
+      <p>
+        Hello, I'm Karim, a Front-End Developer with 2 years of experience in
+        the programming field. My expertise is JavaScript and React and I have a
+        good knowledge of HTML, CSS, and TypeScript. familiar with other
+        technologies such as Next.js Cypress. always looking to improve my
+        skills and stay up to date with the best web development tools out
+        there. a quick learner and enjoy taking on new challenges.
+      </p>
+      <section class="mt-8">
+        keep in touch via: <br />
+        <a
+          class="text-[#a993ff] hover:underline"
+          href="mailto:imkarimkarim@pm.me">imkarimkarim@pm.me</a
+        > or <a
+          class="text-[#78d4ff] hover:underline"
+          target="_blank"
+          href="https://t.me/imkarimkarim47">Telegram</a
+        >
+      </section>
+    </section>
+    <section class="flex mt-10">
+      <a href="https://github.com/imkarimkarim" target="_blank"
+        ><img
+          src="/logos/github.svg"
+          class="invert w-10 h-10 mx-5"
+          alt="karims github page"
+        /></a
+      >
+      <a href="https://www.linkedin.com/in/imkarimkarim" target="_blank"
+        ><img
+          src="/logos/linkedin.svg"
+          class="w-10 h-10 mx-5"
+          alt="karims linkedin profile"
+        /></a
+      >
+      <a href="https://www.youtube.com/@imkarimkarim" target="_blank"
+        ><img
+          src="/logos/youtube.svg"
+          class="w-10 h-10 mx-5"
+          alt="karims youtube channel"
+        /></a
+      >
+    </section>
+  </div>
 </Layout>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+<style is:global>
+  /* copied from: https://codepen.io/mike-schultz/pen/NgQvGO */
+  .gradient-border {
+    --borderWidth: 2px;
+    background: #181c25;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .gradient-border:after {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(
+      60deg,
+      #f79533,
+      #f37055,
+      #ef4e7b,
+      #a166ab,
+      #5073b8,
+      #1098ad,
+      #07b39b,
+      #6fba82
+    );
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+
+  @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* copied from https://codepen.io/jakejarvis/pen/pBZWZw  */
+  .wave {
+    animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s; /* Change to speed up or slow down */
+    animation-iteration-count: 2;
+    transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+    display: inline-block;
+  }
+
+  @keyframes wave-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    } /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    } /* Reset for the last half to pause */
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 </style>
+
+<script>
+  fetch("https://api.github.com/users/imkarimkarim")
+    .then((res) => {
+      if (res.status === 200) {
+        return res.json();
+      }
+    })
+    .then((data) => {
+      const bio = data.bio;
+      const coded = bio.split(",")[1].slice(1);
+      document.getElementById("coded").innerText = "who " + coded;
+    });
+</script>
