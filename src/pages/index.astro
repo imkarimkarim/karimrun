@@ -4,6 +4,8 @@ import Header from '../components/header.astro';
 import KeepInTouch from '../components/keep-in-touch.astro';
 import AboutMe from '../components/about-me.astro';
 import Socials from '../components/socials.astro';
+import Weapons from '../components/weapons.astro';
+import { Image } from '@astrojs/image/components';
 ---
 
 <Layout title="karim, aka Alireza Madani">
@@ -13,18 +15,39 @@ import Socials from '../components/socials.astro';
     <div class="flex flex-col items-center">
         <section class="mx-4 sm:mx-0 sm:w-2/3 lg:w-2/4 text-left">
             <AboutMe />
-            <section class="mt-8">
-                <KeepInTouch />
-            </section>
+            <a href="https://github.com/imkarimkarim?tab=repositories&q=&type=&language=&sort=stargazers" target="_blank"
+                ><span class="font-extralight text-sm text-gray-400 font-mono">Earned <span class="font-extralight underline text-sm text-gray-400 font-mono" id="gh-star-count">...</span> GitHub<Image class="w-4 h-4 inline" width={100} height={100} format={'webp'} src="/emojis/star.png" alt="waving hand emoji" /></span>
+            </a>
         </section>
-        <section class="flex mt-10">
+
+        <section class="mt-12 mx-4 sm:mx-0 sm:w-2/3 lg:w-2/4 text-center">
+            <KeepInTouch />
+        </section>
+        <section class="flex mt-4 mb-6">
             <Socials />
+        </section>
+
+        <section class="mx-4 sm:mx-0 sm:w-2/3 lg:w-2/4 text-left w-full">
+            <Weapons />
         </section>
     </div>
 </Layout>
 
 <style is:global>
     @import url('../style.css');
+
+    body::-webkit-scrollbar {
+        width: 0.4em;
+    }
+
+    body::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    body::-webkit-scrollbar-thumb {
+        border-radius: 100px;
+        background-color: #232937;
+    }
 </style>
 
 <script>
@@ -38,5 +61,13 @@ import Socials from '../components/socials.astro';
             const bio = data.bio;
             const coded = bio.split(',')[1].slice(1);
             document.getElementById('coded').innerText = 'who ' + coded;
+        });
+
+    fetch('https://api.github-star-counter.workers.dev/user/imkarimkarim')
+        .then((res) => {
+            return res.json();
+        })
+        .then((res) => {
+            document.getElementById('gh-star-count').innerText = res.stars;
         });
 </script>
