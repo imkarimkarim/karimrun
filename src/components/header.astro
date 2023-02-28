@@ -8,6 +8,21 @@ import { Image } from '@astrojs/image/components';
         <br />
         <div class="my-2"></div>a Front-End Developer<Image class="w-6 h-6 sm:w-8 sm:h-8 inline" width={100} height={100} format={'webp'} src="/emojis/technologist.png" alt="technologist emoji" />
         <br />
-        <span id="about" class="font-extralight text-xs text-gray-400 font-mono" id="coded">...</span>
+        <div id="about"></div>
+        <span class="font-extralight text-xs text-gray-400 font-mono" id="coded">...</span>
     </h1>
 </header>
+
+<script>
+    fetch('https://api.github.com/users/imkarimkarim')
+        .then((res) => {
+            if (res.status === 200) {
+                return res.json();
+            }
+        })
+        .then((data) => {
+            const bio = data.bio;
+            const coded = bio.split(',')[1].slice(1);
+            document.getElementById('coded').innerText = 'who ' + coded;
+        });
+</script>

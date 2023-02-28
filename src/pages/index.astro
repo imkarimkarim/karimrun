@@ -51,18 +51,6 @@ import { Image } from '@astrojs/image/components';
 </style>
 
 <script>
-    fetch('https://api.github.com/users/imkarimkarim')
-        .then((res) => {
-            if (res.status === 200) {
-                return res.json();
-            }
-        })
-        .then((data) => {
-            const bio = data.bio;
-            const coded = bio.split(',')[1].slice(1);
-            document.getElementById('coded').innerText = 'who ' + coded;
-        });
-
     fetch('https://api.github-star-counter.workers.dev/user/imkarimkarim')
         .then((res) => {
             return res.json();
