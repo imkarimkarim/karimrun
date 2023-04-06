@@ -54,7 +54,7 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body class="bg-[#181c25] text-gray-200 font-sans">
-        <nav class="backdrop-filter backdrop-blur-lg fixed w-full items-center p-3 border-b-2 border-white border-opacity-5 z-50">
+        <nav class="backdrop-filter backdrop-blur-lg fixed w-full items-center p-3 z-50">
             <div class="flex items-center justify-center">
                 <a href="/" class="px-3 py-2 text-white hover:text-gray-500">Home</a>
                 <a href="/#about" class="px-3 py-2 text-white hover:text-gray-500">About</a>
@@ -66,6 +66,6 @@ const { title } = Astro.props;
         <br />
         <slot />
         <!-- TODO add astro icon -->
-        <footer class="text-center text-sm p-3 mt-10 border-t-2 border-white border-opacity-5">Proudly Powered by <a href="https://astro.build/" target="_blank" class="text-[#FF7E33] hover:underline">Astro</a></footer>
+        <footer class="text-center text-sm p-3 mt-10 bgred bg-[#0f1218]">Proudly Powered by <a href="https://astro.build/" target="_blank" class="text-[#FF7E33] hover:underline">Astro</a></footer>
     </body>
 </html>
