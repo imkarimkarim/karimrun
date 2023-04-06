@@ -6,6 +6,7 @@ import AboutMe from '../components/about-me.astro';
 import Socials from '../components/socials.astro';
 import Weapons from '../components/weapons.astro';
 import { Image } from '@astrojs/image/components';
+import CurrentStatus from '../components/current-status.md';
 ---
 
 <Layout title="karim, aka Alireza Madani">
@@ -18,6 +19,10 @@ import { Image } from '@astrojs/image/components';
             <a href="https://github.com/imkarimkarim?tab=repositories&q=&type=&language=&sort=stargazers" target="_blank"
                 ><span class="font-extralight text-sm text-gray-400 font-mono">Earned <span class="font-extralight underline text-sm text-gray-400 font-mono" id="gh-star-count">...</span> GitHub Star<Image class="w-4 h-4 inline" width={100} height={100} format={'webp'} src="/emojis/star.png" alt="waving hand emoji" /></span>
             </a>
+        </section>
+
+        <section class="mt-12 mx-4 sm:mx-0 sm:w-2/3 lg:w-2/4 text-left">
+            <CurrentStatus />
         </section>
 
         <section class="mt-12 mx-4 sm:mx-0 sm:w-2/3 lg:w-2/4 text-center">

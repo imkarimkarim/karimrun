@@ -1,0 +1,3 @@
+- 🚀  currently working at [MetFt](http://metft.com/)  
+- 🧠  also learning [Go](https://go.dev/) to extend [PocketBase](https://pocketbase.io/) for [my next project](https://github.com/coffeeMenu/)  
+- 🤝  open to collaborating on FOSS  
