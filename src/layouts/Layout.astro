@@ -31,7 +31,10 @@ const { title } = Astro.props;
         <meta name="theme-color" content="#ffffff" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&family=Roboto+Mono&display=swap" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,300&family=Roboto+Mono&display=swap"
+            rel="stylesheet"
+        />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content="karim personal website." />
         <link rel="canonical" href="https://karim.run" />
@@ -54,18 +57,10 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body class="bg-[#181c25] text-gray-200 font-sans">
-        <nav class="backdrop-filter backdrop-blur-lg fixed w-full items-center p-3 z-50">
-            <div class="flex items-center justify-center">
-                <a href="/" class="px-3 py-2 text-white hover:text-gray-500">Home</a>
-                <a href="/#about" class="px-3 py-2 text-white hover:text-gray-500">About</a>
-                <a href="https://github.com/imkarimkarim#%EF%B8%8F-contacts" target="_blank" class="px-3 py-2 text-white hover:text-gray-500">Projects</a>
-            </div>
-        </nav>
+        <br />
         <br />
         <br />
         <br />
         <slot />
-        <!-- TODO add astro icon -->
-        <footer class="text-center text-sm p-3 mt-10 bgred bg-[#0f1218]">Proudly Powered by <a href="https://astro.build/" target="_blank" class="text-[#FF7E33] hover:underline">Astro</a></footer>
     </body>
 </html>
