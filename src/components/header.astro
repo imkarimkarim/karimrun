@@ -2,8 +2,8 @@
 import { Image } from '@astrojs/image/components';
 ---
 
-<header class="w-full sm:w-2/3 lg:w-1/2 text-center mb-2">
-    <h1 class="text-2xl md:text-3xl mx-4 md:mx-2 font-bold gradient-border p-6 md:p-10 font-sans">
+<header class="text-center">
+    <h1 class="text-3xl font-bold font-sans m-2">
         what's up<Image
             class="w-6 h-6 sm:w-8 sm:h-8 inline wave mr-1"
             width={100}
@@ -12,13 +12,49 @@ import { Image } from '@astrojs/image/components';
             src="/emojis/waving-hand.png"
             alt="👋"
         /> im karim
-        <br />
-        a internet crawler 🔭
-        <br />
-        <div id="about"></div>
-        <span class="font-extralight text-xs text-gray-400 font-mono" id="coded">...</span>
     </h1>
+    <span class="text-2xl">a internet crawler 🔭</span>
+    <br />
+    <span class="font-extralight text-xs text-gray-400 font-mono" id="coded">...</span>
 </header>
+
+<style>
+    /* copied from https://codepen.io/jakejarvis/pen/pBZWZw  */
+    .wave {
+        animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+        animation-duration: 2.5s; /* Change to speed up or slow down */
+        animation-iteration-count: 2;
+        transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+        display: inline-block;
+    }
+
+    @keyframes wave-animation {
+        0% {
+            transform: rotate(0deg);
+        }
+        10% {
+            transform: rotate(14deg);
+        } /* The following five values can be played with to make the waving more or less extreme */
+        20% {
+            transform: rotate(-8deg);
+        }
+        30% {
+            transform: rotate(14deg);
+        }
+        40% {
+            transform: rotate(-4deg);
+        }
+        50% {
+            transform: rotate(10deg);
+        }
+        60% {
+            transform: rotate(0deg);
+        } /* Reset for the last half to pause */
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+</style>
 
 <script>
     fetch('https://api.github.com/users/imkarimkarim')
