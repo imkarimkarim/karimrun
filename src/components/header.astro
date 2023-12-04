@@ -2,63 +2,108 @@
 import { Image } from '@astrojs/image/components';
 ---
 
-<header class="text-center">
-    <h1 class="text-3xl font-bold font-sans m-2">
-        what's up<Image class="w-6 h-6 sm:w-8 sm:h-8 inline wave mr-1" width={100} height={100} format={'webp'} src="/emojis/waving-hand.png" alt="👋" /> im karim
-    </h1>
-    <span class="text-2xl">a internet crawler 🔭</span>
-    <br />
-    <span class="font-extralight text-xs text-gray-400 font-mono" id="coded">...</span>
+<header class='text-center'>
+	<h1 class='text-3xl font-bold font-sans m-2'>
+		what's up<Image
+			class='w-6 h-6 sm:w-8 sm:h-8 inline wave mr-1'
+			width={100}
+			height={100}
+			format={'webp'}
+			src='/emojis/waving-hand.png'
+			alt='👋'
+		/> im karim
+	</h1>
+	<span class='text-2xl'>a internet crawler 🔭</span>
+	<br />
+	<a target='_blank' href='https://wakatime.com/@imkarimkarim'>
+		<span class='font-extralight text-xs text-gray-400 font-mono' id='coded'>...</span>
+	</a>
 </header>
 
 <style>
-    /* copied from https://codepen.io/jakejarvis/pen/pBZWZw  */
-    .wave {
-        animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-        animation-duration: 2.5s; /* Change to speed up or slow down */
-        animation-iteration-count: 2;
-        transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
-        display: inline-block;
-    }
+	/* copied from https://codepen.io/jakejarvis/pen/pBZWZw  */
+	.wave {
+		animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+		animation-duration: 2.5s; /* Change to speed up or slow down */
+		animation-iteration-count: 2;
+		transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+		display: inline-block;
+	}
 
-    @keyframes wave-animation {
-        0% {
-            transform: rotate(0deg);
-        }
-        10% {
-            transform: rotate(14deg);
-        } /* The following five values can be played with to make the waving more or less extreme */
-        20% {
-            transform: rotate(-8deg);
-        }
-        30% {
-            transform: rotate(14deg);
-        }
-        40% {
-            transform: rotate(-4deg);
-        }
-        50% {
-            transform: rotate(10deg);
-        }
-        60% {
-            transform: rotate(0deg);
-        } /* Reset for the last half to pause */
-        100% {
-            transform: rotate(0deg);
-        }
-    }
+	@keyframes wave-animation {
+		0% {
+			transform: rotate(0deg);
+		}
+		10% {
+			transform: rotate(14deg);
+		} /* The following five values can be played with to make the waving more or less extreme */
+		20% {
+			transform: rotate(-8deg);
+		}
+		30% {
+			transform: rotate(14deg);
+		}
+		40% {
+			transform: rotate(-4deg);
+		}
+		50% {
+			transform: rotate(10deg);
+		}
+		60% {
+			transform: rotate(0deg);
+		} /* Reset for the last half to pause */
+		100% {
+			transform: rotate(0deg);
+		}
+	}
 </style>
 
 <script>
-    fetch('https://api.github.com/users/imkarimkarim')
-        .then((res) => {
-            if (res.status === 200) {
-                return res.json();
-            }
-        })
-        .then((data) => {
-            const bio = data.bio;
-            const coded = bio.split(',')[1].slice(1);
-            document.getElementById('coded').innerText = 'who ' + coded;
-        });
+	let flag = true;
+	const codedEl = document.getElementById('coded');
+	function animateSteps() {
+		let steps = 3; // Number of steps
+		let dots = ''; // Variable to store the increasing dots
+
+		for (let i = 0; i < steps; i++) {
+			setTimeout(function () {
+				if (!flag) return;
+				dots += '.'; // Add a dot to the variable
+				console.log(dots); // Display the current step
+				codedEl.innerText = dots;
+			}, 400 * (i + 1)); // Delay each step by 1 second
+		}
+	}
+	const iv = setInterval(() => {
+		animateSteps();
+	}, 1200);
+
+	fetch('https://api.github.com/users/imkarimkarim')
+		.then((res) => {
+			if (res.status === 200) {
+				return res.json();
+			}
+		})
+		.then((data) => {
+			const bio = data.bio;
+			const coded = bio.split(',')[1].slice(1);
+			flag = false;
+			clearInterval(iv);
+			codedEl.innerText = 'who ' + coded;
+		})
+		.catch((errr) => {
+			console.error(errr);
+			flag = false;
+			clearInterval(iv);
+			codedEl.innerText = '';
+		});
+
+	const wave = document.querySelector('.wave');
+	wave.addEventListener('click', () => {
+		console.log('im getting clicked');
+		wave.classList.remove('wave');
+		// @ts-ignore
+		void wave.offsetWidth; // Trigger a reflow
+		wave.classList.add('wave');
+	});
 </script>
