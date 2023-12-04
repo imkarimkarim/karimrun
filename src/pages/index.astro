@@ -11,13 +11,3 @@ import Socials from '../components/socials.astro';
         <Socials />
     </main>
 </Layout>
-
-<script>
-    fetch('https://api.github-star-counter.workers.dev/user/imkarimkarim')
-        .then((res) => {
-            return res.json();
-        })
-        .then((res) => {
-            document.getElementById('gh-star-count').innerText = res.stars;
-        });
-</script>
