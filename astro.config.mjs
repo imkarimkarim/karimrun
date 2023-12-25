@@ -12,7 +12,11 @@ export default defineConfig({
 	redirects: {
 		'/resume': {
 			status: 302,
-			destination: '/karim-resume.pdf',
+			destination: '/karim-cv.pdf',
+		},
+		'/cv': {
+			status: 302,
+			destination: '/karim-cv.pdf',
 		},
 	},
 });
