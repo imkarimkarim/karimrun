@@ -3,6 +3,12 @@ export interface Props {
 	title: string;
 }
 
+const desc = `internet crawler, Front-End developer and Linux user
+with 4 years of experience in building and maintaining
+web applications. I have experience working in teams
+and collaborating with others to ship production software.
+I’m always willing to learn from others and improve my skills.`;
+
 const { title } = Astro.props;
 ---
 
@@ -36,13 +42,13 @@ const { title } = Astro.props;
 			rel='stylesheet'
 		/>
 		<meta name='generator' content={Astro.generator} />
-		<meta name='description' content='karim personal website.' />
+		<meta name='description' content={desc} />
 		<link rel='canonical' href='https://karim.run' />
 		<meta property='og:type' content='website' />
 		<meta property='og:url' content='https://karim.run' />
 		<meta property='og:title' content='karims personal website' />
 		<meta property='og:image' content='https://karim.run/thumbnail.png' />
-		<meta property='og:description' content='karim personal website.' />
+		<meta property='og:description' content={desc} />
 		<meta property='og:site_name' content='karim.run' />
 		<!-- TODO fa_IR -->
 		<meta property='og:locale' content='en_US' />
@@ -52,7 +58,7 @@ const { title } = Astro.props;
 		<meta name='twitter:site' content='@imkarimkarim' />
 		<meta name='twitter:url' content='https://karim.run' />
 		<meta name='twitter:title' content='karims personal website' />
-		<meta name='twitter:description' content='karim personal website.' />
+		<meta name='twitter:description' content={desc} />
 		<meta name='twitter:image' content='https://karim.run/thumbnail.png' />
 		<title>{title}</title>
 	</head>
