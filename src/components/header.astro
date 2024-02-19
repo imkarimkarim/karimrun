@@ -3,8 +3,20 @@ import { Image } from '@astrojs/image/components';
 ---
 
 <header class='text-center'>
+	<!-- TODO three.js(prank) -->
+	<a title="don't click on me!" target='_blank' href='https://wakatime.com/@imkarimkarim'>
+		<Image
+			class='w-32 h-32 dark:w-24 dark:h-24 inline m-2 dark:m-6 mix-blend-darken dark:mix-blend-normal'
+			width={192}
+			height={192}
+			format={'webp'}
+			src='/favicon/android-icon-192x192.png'
+			alt='karim avatar'
+		/>
+	</a>
 	<h1 class='text-3xl font-bold font-sans m-2'>
 		what's up<Image
+			title='Hiiiiiiiiiiiiiiii!'
 			class='w-7 h-7 sm:w-8 sm:h-8 inline wave mr-1'
 			width={100}
 			height={100}
@@ -13,18 +25,20 @@ import { Image } from '@astrojs/image/components';
 			alt='👋'
 		/> im karim
 	</h1>
-	<span class='text-2xl'
-		>a internet crawler <Image
-			class='w-5 h-5 sm:w-6 sm:h-6 inline mr-1 transform -scale-x-100'
-			width={100}
-			height={100}
-			format={'webp'}
-			src='/emojis/telescope.png'
-			alt='🔭'
-		/></span
+	<span title='crawiling outgrowth 🔭 telegram channel' class='text-2xl'
+		>a internet crawler <a target='_blank' href='https://t.me/crawlingoutgrowth'
+			><Image
+				class='w-5 h-5 sm:w-6 sm:h-6 inline mr-1 transform -scale-x-100'
+				width={100}
+				height={100}
+				format={'webp'}
+				src='/emojis/telescope.png'
+				alt='🔭'
+			/></a
+		></span
 	>
 	<br />
-	<a target='_blank' href='https://wakatime.com/@imkarimkarim'>
+	<a title='WakaTime stats' target='_blank' href='https://wakatime.com/@imkarimkarim'>
 		<span class='font-extralight text-xs text-gray-600 dark:text-gray-400 font-mono' id='coded'>...</span>
 	</a>
 </header>
@@ -37,6 +51,7 @@ import { Image } from '@astrojs/image/components';
 		animation-iteration-count: 2;
 		transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
 		display: inline-block;
+		cursor: pointer;
 	}
 
 	@keyframes wave-animation {
@@ -71,16 +86,15 @@ import { Image } from '@astrojs/image/components';
 	let flag = true;
 	const codedEl = document.getElementById('coded');
 	function animateSteps() {
-		let steps = 3; // Number of steps
-		let dots = ''; // Variable to store the increasing dots
+		let steps = 3;
+		let dots = '';
 
 		for (let i = 0; i < steps; i++) {
 			setTimeout(function () {
 				if (!flag) return;
-				dots += '.'; // Add a dot to the variable
-				console.log(dots); // Display the current step
+				dots += '.';
 				codedEl.innerText = dots;
-			}, 400 * (i + 1)); // Delay each step by 1 second
+			}, 400 * (i + 1));
 		}
 	}
 	const iv = setInterval(() => {
@@ -109,7 +123,6 @@ import { Image } from '@astrojs/image/components';
 
 	const wave = document.querySelector('.wave');
 	wave.addEventListener('click', () => {
-		console.log('im getting clicked');
 		wave.classList.remove('wave');
 		// @ts-ignore
 		void wave.offsetWidth; // Trigger a reflow
