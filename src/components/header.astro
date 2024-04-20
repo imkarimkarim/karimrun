@@ -43,6 +43,24 @@ import { Image } from '@astrojs/image/components';
 	<a title='WakaTime stats' target='_blank' href='https://wakatime.com/@imkarimkarim'>
 		<span class='font-extralight text-xs text-gray-600 dark:text-gray-400 font-mono' id='coded'>...</span>
 	</a>
+	<span class='tooltip' id='tooltip'>
+		<Image
+			class='w-4 h-4 inline mr-1 transform -scale-x-100'
+			width={47}
+			height={47}
+			format={'png'}
+			src='/emojis/info.png'
+			alt='info'
+		/>
+		<span class='tooltiptext text-sm font-sans cursor-auto'
+			><h3>
+				This Info May Not Be Accurate! <span
+					onclick="alert('This information is being updated every 15 minutes by a script, running on my local machine. Due to Internet restrictions set by the government in Iran, there may be instances where the script cannot perform well.')"
+					class='underline cursor-pointer'>(Read More)</span
+				>
+			</h3></span
+		>
+	</span>
 </header>
 
 <style>
@@ -82,6 +100,32 @@ import { Image } from '@astrojs/image/components';
 			transform: rotate(0deg);
 		}
 	}
+
+	.tooltip {
+		cursor: pointer;
+		position: relative;
+		display: none;
+	}
+
+	.tooltip .tooltiptext {
+		display: none;
+		width: 170px;
+		color: rgb(229 231 235);
+		background-color: #181c25;
+		box-shadow: 0 0 20px 0px #ffffff3d;
+		border: 1px solid rgb(229 231 235 / 70%);
+		border-radius: 10px;
+		padding: 10px;
+		position: absolute;
+		z-index: 1;
+		bottom: 100%;
+		left: 50%;
+		margin-left: -160px;
+	}
+
+	.tooltip:hover .tooltiptext {
+		display: block;
+	}
 </style>
 
 <script>
@@ -115,6 +159,7 @@ import { Image } from '@astrojs/image/components';
 			flag = false;
 			clearInterval(iv);
 			codedEl.innerText = 'who ' + coded;
+			document.getElementById('tooltip').style.display = 'inline-block';
 		})
 		.catch((errr) => {
 			console.error(errr);
