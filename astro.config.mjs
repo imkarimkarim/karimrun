@@ -6,7 +6,7 @@ import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://example.com',
+    site: 'https://karim.run',
     integrations: [mdx(), sitemap(), tailwind()],
     markdown: {
         shikiConfig: {
@@ -18,6 +18,16 @@ export default defineConfig({
             light: 'poimandres',
             dark: 'catppuccin-latte',
           },
+        },
+      },
+      redirects: {
+        '/resume': {
+          status: 302,
+          destination: '/karim-cv.pdf',
+        },
+        '/cv': {
+          status: 302,
+          destination: '/karim-cv.pdf',
         },
       },
     

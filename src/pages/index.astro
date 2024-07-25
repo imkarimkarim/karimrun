@@ -1,45 +1,205 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import RecentPublications from "../components/RecentPublications.astro";
+import Head from "../components/Head.astro";
+import Socials from "../components/index/socials.astro";
+import {SITE_DESCRIPTION, SITE_TITLE} from '../consts'
+import Body from '../components/Body.astro'
+import { Image } from 'astro:assets';
+
 ---
+
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body class="w-full max-w-screen-md mx-auto my-4 dark:bg-neutral-800 dark:text-neutral-300 transition-colors duration-300" >
-    <Header />
-    <main class="flex flex-col justify-center">
-      <div class="px-4 md:px-16 flex flex-col gap-4 md:my-10">
-        <h1 class="text-2xl md:text-5xl w-full">🧑‍🚀 Hello, Astronaut!</h1>
-        <p class="w-full text-justify text-base md:text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi officia
-          neque eligendi nulla impedit error, consequuntur aspernatur autem id
-          pariatur tenetur quod.
-        </p>
-      </div>
-      <div class="w-full flex flex-col items-center gap-2.5 px-4 lg:px-0 mt-6">
-        <img
-          src="https://images.unsplash.com/photo-1635627408144-6bf36d28fb98"
-          alt="Astronaut"
-        />
-        <p class="italic text-xs text-gray-600 dark:text-neutral-400">
-          Foto de <a
-            href="https://unsplash.com/es/@niklasjonasson?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-            >Niklas Jonasson</a
-          > en <a
-            href="https://unsplash.com/es/fotos/un-cuerpo-de-agua-con-arboles-en-el-fondo-j_WW0u2yYAE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-            >Unsplash</a
+  <Head title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  <Body>
+    <main class='flex flex-col gap-2 h-screen w-full justify-center align-middle'>
+      <div class='text-center'>
+        <!-- TODO three.js(prank) -->
+        <a
+          title='do not click on me!'
+          target='_blank'
+          href='https://www.reddit.com/r/ProgrammerHumor/comments/12hl37d/god_why_is_coding_chess_so_hard/'>
+          <Image
+            class='w-32 h-32 dark:w-24 dark:h-24 inline m-2 dark:m-6 mix-blend-darken dark:mix-blend-normal'
+            width={516}
+            height={516}
+            format={'png'}
+            src='/images/avatar.png'
+            alt='karim avatar'
+          />
+        </a>
+        <h1 class='text-2xl font-bold m-2'>
+          what's up<Image
+            title='Hiiiiiiiiiiiiiiii!'
+            class='w-7 h-7 sm:w-8 sm:h-8 inline wave mr-1'
+            width={100}
+            height={100}
+            format={'png'}
+            src='/emojis/waving-hand.png'
+            alt='👋'
+          /> im karim
+        </h1>
+        <span class='text-xl'
+          >a internet crawler <a target='_blank' href='https://t.me/crawlingoutgrowth'
+            ><Image
+              title='crawiling outgrowth 🔭 telegram channel'	class='w-5 h-5 sm:w-6 sm:h-6 inline mr-1 transform -scale-x-100'
+              width={100}
+              height={100}
+              format={'png'}
+              src='/emojis/telescope.png'
+              alt='🔭'
+            /></a
+          ><p class='text-lg'>Front-End developer</p><p class='text-lg font-light dark:font-extralight'>and Linux user</p></span
+        >
+        <a title='WakaTime stats' target='_blank' href='https://wakatime.com/@imkarimkarim'>
+          <span class='text-base font-light dark:font-extralight' id='coded'>...</span>
+        </a>
+        <span class='tooltip' id='tooltip'>
+          <Image
+            class='w-4 h-4 inline mx-1 mb-[2px] transform -scale-x-100'
+            width={47}
+            height={47}
+            format={'png'}
+            src='/emojis/info.png'
+            alt='info'
+          />
+          <span class='tooltiptext text-sm  cursor-auto'
+            ><h3>
+              This Info May Not Be Accurate! <br /><span
+                onclick="alert('This information is being updated every 15 minutes by a script, running on my local machine. Due to Internet restrictions set by the government in Iran, there may be instances where the script cannot perform well.')"
+                class='underline cursor-pointer'>(Read More)</span
+              >
+            </h3></span
           >
-        </p>
+        </span>
       </div>
-	  <RecentPublications />
-	      </main>
-    <Footer />
-  </body>
+      <br />
+      <Socials />
+    </main>
+  </Body>
 </html>
 
+
+<style>
+	/* copied from https://codepen.io/jakejarvis/pen/pBZWZw  */
+	.wave {
+		animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+		animation-duration: 2.5s; /* Change to speed up or slow down */
+		animation-iteration-count: 3;
+		transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+		display: inline-block;
+		cursor: pointer;
+	}
+
+	@keyframes wave-animation {
+		0% {
+			transform: rotate(0deg);
+		}
+		10% {
+			transform: rotate(14deg);
+		} /* The following five values can be played with to make the waving more or less extreme */
+		20% {
+			transform: rotate(-8deg);
+		}
+		30% {
+			transform: rotate(14deg);
+		}
+		40% {
+			transform: rotate(-4deg);
+		}
+		50% {
+			transform: rotate(10deg);
+		}
+		60% {
+			transform: rotate(0deg);
+		} /* Reset for the last half to pause */
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+
+	.tooltip {
+		cursor: pointer;
+		position: relative;
+		display: none;
+	}
+
+	.tooltip .tooltiptext {
+		display: none;
+		width: 170px;
+		color: rgb(229 231 235);
+		background-color: #181c25;
+		box-shadow: 0 0 20px 0px #ffffff3d;
+		border: 1px solid rgb(229 231 235 / 70%);
+		border-radius: 10px;
+		padding: 10px;
+		position: absolute;
+		z-index: 1;
+		bottom: 100%;
+		left: 50%;
+		margin-left: -160px;
+	}
+
+	.tooltip:hover .tooltiptext {
+		display: block;
+	}
+</style>
+
+<script>
+	let flag = true;
+	const codedEl = document.getElementById('coded');
+	function animateSteps() {
+		let steps = 3;
+		let dots = '';
+
+		for (let i = 0; i < steps; i++) {
+			setTimeout(function () {
+				if (!flag) return;
+				dots += '.';
+				if(codedEl){
+				codedEl.innerText = dots;}
+			}, 400 * (i + 1));
+		}
+	}
+	const iv = setInterval(() => {
+		animateSteps();
+	}, 1200);
+
+	fetch('https://api.github.com/users/imkarimkarim')
+		.then((res) => {
+			if (res.status === 200) {
+				return res.json();
+			}
+		})
+		.then((data) => {
+			const bio = data.bio;
+			const coded = bio.split(',')[1].slice(1);
+			flag = false;
+			clearInterval(iv);
+			if(codedEl){
+			codedEl.innerText = 'who ' + coded;
+		}
+		const tooltip = document.getElementById('tooltip');
+		if(tooltip){
+			tooltip.style.display = 'inline-block';
+		} 
+		})
+		.catch((errr) => {
+			console.error(errr);
+			flag = false;
+			clearInterval(iv);
+			if(codedEl){
+			codedEl.innerText = '';}
+		});
+
+	const wave = document.querySelector('.wave');
+	if(wave){
+	wave.addEventListener('click', () => {
+		wave.classList.remove('wave');
+		// @ts-ignore
+		void wave.offsetWidth; // Trigger a reflow
+		wave.classList.add('wave');
+		
+	});
+}
+</script>
