@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
+import Head from "../components/Head.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
@@ -14,7 +14,7 @@ const { title, description, pubDate, heroImage, tags } = Astro.props;
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <Head title={title} description={description} />
   </head>
   <body class="w-full max-w-screen-md mx-auto my-4 bg-slate-200 dark:bg-[#181c25] text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
     <Header />

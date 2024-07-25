@@ -1,5 +1,5 @@
 ---
-import BaseHead from "../../components/BaseHead.astro";
+import Head from "../../components/Head.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
@@ -29,7 +29,7 @@ posts.forEach((post) => {
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <Head title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="w-full  mx-auto my-4 max-w-screen-md dark:bg-neutral-800 dark:text-neutral-300 transition-colors duration-300">
     <Header />
