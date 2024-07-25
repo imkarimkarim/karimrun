@@ -23,10 +23,10 @@ const { title, description, pubDate, heroImage, tags } = Astro.props;
         <div class="flex justify-between mb-6">
           <FormattedDate date={pubDate} />
           <p class="text-gray-500 dark:text-neutral-400 text-xs font-medium tracking-wide">
-            5 min read
+            <!-- 5 min read -->
           </p>
         </div>
-        <h1 class="text-5xl mb-8">
+        <h1 class="text-3xl mb-8">
           {title}
         </h1>
         <div>
@@ -52,8 +52,13 @@ const { title, description, pubDate, heroImage, tags } = Astro.props;
             )
           }
         </div>
+        <p class="text-gray-500 dark:text-neutral-400 text-xs mt-4 font-medium tracking-wide">
+          by: karim
+        </p>
       </article>
+ 
     </main>
+
     <Footer />
   </body>
 
