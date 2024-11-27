@@ -29,7 +29,7 @@ import { Image } from 'astro:assets';
           />
         </a>
         <h1 class='text-2xl font-bold m-2'>
-          what's up<Image
+          what's up,<Image
             title='Hiiiiiiiiiiiiiiii!'
             class='w-7 h-7 sm:w-8 sm:h-8 inline wave mr-1'
             width={100}
@@ -37,7 +37,23 @@ import { Image } from 'astro:assets';
             format={'webp'}
             src='/emojis/waving-hand.webp'
             alt='👋'
-          /> im karim
+          /> 
+
+		  <span class='karim-daghan' id='karim-daghan'>
+			<span class="underline ps-2 cursor-default">im karim</span>.
+			<span class='karim-daghan-preview w-60 text-sm cursor-pointer'
+			  ><Image
+			  onclick='window.open("/images/karim-daghan.jpg")'
+			  title='karim daghan'
+			  class='sm:w-full'
+			  width={640}
+			  height={640}
+			  format={'jpg'}
+			  src='/images/karim-daghan.jpg'
+			  alt='karim daghan'
+			/> </span
+			>
+		  </span>
         </h1>
         <span class='text-xl'
           >a internet crawler <a target='_blank' href='https://t.me/crawlingoutgrowth'
@@ -63,7 +79,7 @@ import { Image } from 'astro:assets';
             src='/emojis/info.webp'
             alt='info'
           />
-          <span class='tooltiptext text-sm  cursor-auto'
+          <span class='tooltiptext text-sm cursor-auto'
             ><h3>
               This Info May Not Be Accurate! <br /><span
                 onclick="alert('This information is being updated every 15 minutes by a script, running on my local machine. Due to Internet restrictions set by the government in Iran, there may be instances where the script cannot perform well.')"
@@ -119,7 +135,7 @@ import { Image } from 'astro:assets';
 	}
 
 	.tooltip {
-		cursor: pointer;
+		cursor: default;
 		position: relative;
 		display: none;
 	}
@@ -140,7 +156,32 @@ import { Image } from 'astro:assets';
 		margin-left: -160px;
 	}
 
+	/* TODO refactor */
 	.tooltip:hover .tooltiptext {
+		display: block;
+	}
+
+	.karim-daghan {
+		cursor: default;
+		position: relative;
+	}
+
+	.karim-daghan .karim-daghan-preview {
+		display: none;
+		color: rgb(229 231 235);
+		background-color: #181c25;
+		box-shadow: 0 0 20px 0px #ffffff3d;
+		border: 1px solid rgb(229 231 235 / 70%);
+		border-radius: 10px;
+		padding: 10px;
+		position: absolute;
+		z-index: 1;
+		bottom: 100%;
+		left: 50%;
+		margin-left: -160px;
+	}
+
+	.karim-daghan:hover .karim-daghan-preview {
 		display: block;
 	}
 </style>
