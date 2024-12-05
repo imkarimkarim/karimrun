@@ -68,7 +68,7 @@ import { Image } from 'astro:assets';
           ><p class='text-lg'>Front-End developer</p><p class='text-lg font-light dark:font-extralight'>and Linux user</p></span
         >
         <a title='WakaTime stats' target='_blank' href='https://wakatime.com/@imkarimkarim'>
-          <span class='text-base font-light dark:font-extralight' id='coded'>...</span>
+          <span class='text-base font-light dark:font-extralight' id='worked'>...</span>
         </a>
         <span class='tooltip' id='tooltip'>
           <Image
@@ -188,7 +188,7 @@ import { Image } from 'astro:assets';
 
 <script>
 	let flag = true;
-	const codedEl = document.getElementById('coded');
+	const workedEl = document.getElementById('worked');
 	function animateSteps() {
 		let steps = 3;
 		let dots = '';
@@ -197,8 +197,8 @@ import { Image } from 'astro:assets';
 			setTimeout(function () {
 				if (!flag) return;
 				dots += '.';
-				if(codedEl){
-				codedEl.innerText = dots;}
+				if(workedEl){
+				workedEl.innerText = dots;}
 			}, 400 * (i + 1));
 		}
 	}
@@ -214,11 +214,11 @@ import { Image } from 'astro:assets';
 		})
 		.then((data) => {
 			const bio = data.bio;
-			const coded = bio.split(',')[1].slice(1);
+			const worked = bio.split(',')[1].slice(1);
 			flag = false;
 			clearInterval(iv);
-			if(codedEl){
-			codedEl.innerText = 'who ' + coded;
+			if(workedEl){
+			workedEl.innerText = 'who ' + worked;
 		}
 		const tooltip = document.getElementById('tooltip');
 		if(tooltip){
@@ -229,8 +229,8 @@ import { Image } from 'astro:assets';
 			console.error(errr);
 			flag = false;
 			clearInterval(iv);
-			if(codedEl){
-			codedEl.innerText = '';}
+			if(workedEl){
+			workedEl.innerText = '';}
 		});
 
 	const wave = document.querySelector('.wave');
