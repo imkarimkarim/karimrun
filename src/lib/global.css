@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Reddit Mono";
+  src: url("/fonts/RobotoMono-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Reddit Mono";
+  src: url("/fonts/RobotoMono-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Reddit Mono";
+  src: url("/fonts/RobotoMono-ThinItalic.ttf") format("ttf");
+  font-weight: lighter;
+  font-style: italic;
+}
+
+html {
+  font-family: "Reddit Mono", monospace;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  @apply rounded-lg;
+  max-width: 100%;
+  height: auto;
+}
+
+/* copied from https://codepen.io/jakejarvis/pen/pBZWZw  */
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: 3;
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+  cursor: pointer;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.tooltip {
+  cursor: default;
+  position: relative;
+  display: none;
+}
+
+.tooltip .tooltiptext {
+  display: none;
+  width: 170px;
+  color: rgb(229 231 235);
+  background-color: #181c25;
+  box-shadow: 0 0 20px 0px #ffffff3d;
+  border: 1px solid rgb(229 231 235 / 70%);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -160px;
+}
+
+/* TODO refactor */
+.tooltip:hover .tooltiptext {
+  display: block;
+}
+
+.karim-daghan {
+  cursor: default;
+  position: relative;
+}
+
+.karim-daghan .karim-daghan-preview {
+  display: none;
+  color: rgb(229 231 235);
+  background-color: #181c25;
+  box-shadow: 0 0 20px 0px #ffffff3d;
+  border: 1px solid rgb(229 231 235 / 70%);
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -160px;
+}
+
+.karim-daghan:hover .karim-daghan-preview {
+  display: block;
+}
