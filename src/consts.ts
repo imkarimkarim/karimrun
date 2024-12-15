@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'karim, internet crawler 🔭'
-export const SITE_DESCRIPTION =  `internet crawler, Front-End developer and Linux user
+export const SITE_DESCRIPTION =  `internet crawler, Front-End developer and GNU/Linux user
 with 4 years of experience in building and maintaining
 web applications. I have experience working in teams
 and collaborating with others to ship production software.
