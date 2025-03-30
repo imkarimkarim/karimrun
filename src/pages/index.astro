@@ -39,17 +39,17 @@ import { Image } from 'astro:assets';
             alt='👋'
           /> 
 
-		  <span class='karim-daghan' id='karim-daghan'>
+		  <span class='k' id='k'>
 			<span class="underline ps-2 cursor-default">im karim</span>.
-			<span class='karim-daghan-preview w-60 text-sm cursor-pointer'
+			<span class='k-preview w-60 text-sm cursor-pointer'
 			  ><Image
-			  onclick='window.open("/images/karim-daghan.jpg")'
+			  onclick='window.open("/images/k.jpg")'
 			  title='karim daghan'
 			  class='sm:w-full'
 			  width={640}
 			  height={640}
 			  format={'jpg'}
-			  src='/images/karim-daghan.jpg'
+			  src='/images/k.jpg'
 			  alt='karim daghan'
 			/> </span
 			>
@@ -161,12 +161,12 @@ import { Image } from 'astro:assets';
 		display: block;
 	}
 
-	.karim-daghan {
+	.k {
 		cursor: default;
 		position: relative;
 	}
 
-	.karim-daghan .karim-daghan-preview {
+	.k .k-preview {
 		display: none;
 		color: rgb(229 231 235);
 		background-color: #181c25;
@@ -181,7 +181,7 @@ import { Image } from 'astro:assets';
 		margin-left: -160px;
 	}
 
-	.karim-daghan:hover .karim-daghan-preview {
+	.k:hover .k-preview {
 		display: block;
 	}
 </style>
