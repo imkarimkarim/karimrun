@@ -20,7 +20,7 @@ import { Image } from 'astro:assets';
           target='_blank'
           href='https://www.reddit.com/r/ProgrammerHumor/comments/12hl37d/god_why_is_coding_chess_so_hard/'>
           <Image
-            class='w-32 h-32 dark:w-24 dark:h-24 inline m-2 dark:m-6 mix-blend-darken dark:mix-blend-normal'
+            class='w-[10rem] dark:w-[8rem] h-[10rem] dark:h-[8rem] inline m-2 dark:m-6 mix-blend-darken dark:mix-blend-normal'
             width={516}
             height={516}
             format={'webp'}
@@ -173,13 +173,24 @@ import { Image } from 'astro:assets';
 		box-shadow: 0 0 20px 0px #ffffff3d;
 		border: 1px solid rgb(229 231 235 / 70%);
 		border-radius: 10px;
-		padding: 10px;
+		padding: 7px;
 		position: absolute;
 		z-index: 1;
 		bottom: 100%;
 		left: 50%;
 		margin-left: -160px;
 	}
+
+	@media (prefers-color-scheme: light) {
+		.k .k-preview {
+			background-color: #EAEFF5;
+			color: #181c25;
+			box-shadow: 0 0 10px 0px #0000001a;
+			border: 1px solid rgb(24 28 37 / 30%);
+		}
+	}
+
+	
 
 	.k:hover .k-preview {
 		display: block;
