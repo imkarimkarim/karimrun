@@ -1,18 +1,12 @@
 ---
-import Head from "../components/Head.astro";
 import Socials from "../components/index/socials.astro";
-import {SITE_DESCRIPTION, SITE_TITLE} from '../consts'
-import Body from '../components/Body.astro'
 import { Image } from 'astro:assets';
-
+import Layout from "../layouts/Layout.astro";
 ---
 
 
-<!doctype html>
-<html lang="en">
-  <Head title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  <Body>
-    <main class='flex flex-col gap-2 h-screen w-full justify-center align-middle'>
+<Layout title="Home" />
+    <main class='flex flex-col gap-2 h-screen w-full justify-center align-middle '>
       <div class='text-center'>
         <!-- TODO three.js(prank) -->
         <a
@@ -91,11 +85,10 @@ import { Image } from 'astro:assets';
       </div>
       <Socials />
 	  <div class="text-center">
-		<a class="underline" href="/apps">apps</a>
+		<a class="underline hover:no-underline font-sf-pro" href="/apps">apps</a>
 	  </div>
     </main>
-  </Body>
-</html>
+</Layout>
 
 
 <style>

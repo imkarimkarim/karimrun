@@ -1,3 +1,40 @@
+/* SF Pro Display */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SF-Pro-Display-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Roboto Mono */
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('/fonts/RobotoMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('/fonts/RobotoMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 html {
     font-family: 'Reddit Mono', monospace;
     width: 100%;
@@ -29,4 +66,18 @@ img {
   background-size: 140% 140%;
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+.d{
+  border: 1px solid red;
+}
+
+.dd{
+  border: 1px solid yellow;
+}
+
+.ddd{
+  border: 1px solid blue;
+}
+
+
+
+
