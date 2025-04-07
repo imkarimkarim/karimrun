@@ -1,19 +1,13 @@
 export interface App {
   name: string;
-  thumbnail: string;
   description: string;
+  link: string;
 }
 
 export const apps: App[] = [
   {
-    name: "App 1",
-    thumbnail: "/images/app1-thumbnail.jpg",
-    description: "A brief description of App 1 and its features."
+    name: "Goje",
+    description: "Free Accounting/Warehousing Software for Fruit and Vegetable Sellers",
+    link: "https://stupendous-boba-4dd7dd.netlify.app/"
   },
-  {
-    name: "App 2",
-    thumbnail: "/images/app2-thumbnail.jpg",
-    description: "A brief description of App 2 and its features."
-  },
-  // Add more apps as needed
 ]; 

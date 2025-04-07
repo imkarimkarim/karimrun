@@ -14,20 +14,26 @@ import { Image } from 'astro:assets';
       /
         </a>
     </nav>
-  <main class="container mx-auto p-8 pt-10 md:p-20 font-sf-pro">
+  <main class="container mx-auto p-4 pt-10 md:p-20 font-sf-pro">
     <h1 class="text-2xl md:text-4xl font-bold text-center mb-1">APPS</h1>
     <p class="text-center opacity-50 text-xs ">created by karim</p>
     <div class="flex flex-wrap justify-center gap-16 p-0 pt-10 md:gap-20 md:pt-20">
       {apps.map((app) => (
+        <a href={app.link} target="_blank"> 
         <article class="flex flex-col">
-          <img
-            src={`https://picsum.photos/seed/${app.name}/512/512`}
-            alt={app.name}
+             <Image
             class="w-96 h-64 rounded-lg object-cover mb-3"
+            loading="eager"
+            width={1000}
+            height={748}
+            format={'webp'}
+            src={`/images/${app.name.toLowerCase()}.png`}
+            alt={app.name}
           />
-          <h2 class="text-2xl font-medium">{app.name}</h2>
-          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">{app.description}</p>
+          <h2 class="text-2xl max-w-sm font-medium">{app.name}</h2>
+          <p class="text-sm max-w-xs   text-gray-600 dark:text-gray-300 mt-1">{app.description}</p>
         </article>
+      </a>
       ))}
     </div>
   </main>
