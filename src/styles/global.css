@@ -54,30 +54,3 @@ img {
     max-width: 100%;
     height: auto;
 }
-
-@keyframes gradient {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
-}
-
-.animate-gradient {
-  animation: gradient 3s cubic-bezier(0.4, 0, 0.2, 1) 1;
-  background-size: 140% 140%;
-}
-
-.d{
-  border: 1px solid red;
-}
-
-.dd{
-  border: 1px solid yellow;
-}
-
-.ddd{
-  border: 1px solid blue;
-}
-
-
-
-
