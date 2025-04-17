@@ -31,7 +31,7 @@ import Layout from "../layouts/Layout.astro";
             format={'webp'}
             src='/emojis/waving-hand.webp'
             alt='👋'
-          /> 
+          />
 
 		  <span class='k' id='k'>
 			<span class="underline ps-2 cursor-default">im karim</span>.
@@ -84,9 +84,6 @@ import Layout from "../layouts/Layout.astro";
         </span>
       </div>
       <Socials />
-	  <div class="text-center">
-		<a class="underline hover:no-underline font-sf-pro" href="/apps">apps</a>
-	  </div>
     </main>
 </Layout>
 
@@ -218,7 +215,7 @@ import Layout from "../layouts/Layout.astro";
 		const tooltip = document.getElementById('tooltip');
 		if(tooltip){
 			tooltip.style.display = 'inline-block';
-		} 
+		}
 		})
 		.catch((errr) => {
 			console.error(errr);
@@ -235,7 +232,7 @@ import Layout from "../layouts/Layout.astro";
 		// @ts-ignore
 		void wave.offsetWidth; // Trigger a reflow
 		wave.classList.add('wave');
-		
+
 	});
 }
 </script>
