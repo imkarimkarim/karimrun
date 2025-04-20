@@ -30,8 +30,7 @@ import { Image } from 'astro:assets';
             src={`/images/${app.name.toLowerCase()}.png`}
             alt={app.name}
           />
-          <h2 class="text-xl max-w-sm font-medium">{app.name}</h2>
-          <p class="text-sm max-w-xs   text-gray-600 dark:text-gray-300 mt-1">{app.description}</p>
+          <p class="text-sm max-w-xs text-gray-600 dark:text-gray-300 mt-1"><span class="text-[1.1rem]"> {app.name} | </span> {app.description}</p>
         </article>
       </a>
       ))}
